@@ -20,6 +20,10 @@ jobs:
                     wget https://jmeter-plugins.org/get/ -O /opt/jmeter/lib/ext/jmeter-plugins-manager.jar
                     java -cp /opt/jmeter/lib/ext/jmeter-plugins-manager.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
             - run:
+                name: Crear archivo PluginsManagerCMD.bat
+                command: |
+                    echo "REM Dummy file for Plugin Manager compatibility" > /opt/jmeter/bin/PluginsManagerCMD.bat        
+            - run:
                  name: Instalar Plugins TST
                  command: |
                      java -cp /opt/jmeter/lib/ext/jmeter-plugins-manager.jar org.jmeterplugins.repository.PluginManagerCMD install jpgc-casutg
