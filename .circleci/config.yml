@@ -5,6 +5,16 @@ executors:
         docker:
         - image: justb4/jmeter
         working_directory: ~/app
+        steps:
+        - run:
+            name: Instalar JMeter Plugin Manager 
+            command: |
+                wget https://jmeter-plugins.org/get/ -O /opt/jmeter/lib/ext/jmeter-plugins-manager.jar
+                java -cp /opt/jmeter/lib/ext/jmeter-plugins-manager.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
+        - run:
+            name: Instalar Plugins Necesarios
+            command: |
+                java -cp /opt/jmeter/lib/ext/jmeter-plugins-manager.jar org.jmeterplugins.repository.PluginManagerCMD install jpgc-casutg        
 jobs:
     run-jmeter-test:
         executor: base
