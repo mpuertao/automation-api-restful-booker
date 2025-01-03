@@ -12,6 +12,9 @@ jobs:
         steps:
             - checkout
             - run:
+                name: Crear directorio para extensiones de JMeter
+                command: mkdir -p /opt/jmeter/lib/ext
+            - run:
                 name: Instalar JMeter Plugin Manager 
                 command: |
                     wget https://jmeter-plugins.org/get/ -O /opt/jmeter/lib/ext/jmeter-plugins-manager.jar
