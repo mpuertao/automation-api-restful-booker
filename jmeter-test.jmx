@@ -183,26 +183,6 @@ vars.put(&quot;random_value&quot;, randomValue);</stringProp>
           </doubleProp>
         </ConstantThroughputTimer>
         <hashTree/>
-        <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="jp@gc - Throughput Shaping Timer" enabled="false">
-          <collectionProp name="load_profile">
-            <collectionProp name="1874212084">
-              <stringProp name="53">5</stringProp>
-              <stringProp name="1567">10</stringProp>
-              <stringProp name="1629">30</stringProp>
-            </collectionProp>
-            <collectionProp name="1542636268">
-              <stringProp name="1567">10</stringProp>
-              <stringProp name="1567">10</stringProp>
-              <stringProp name="48687">120</stringProp>
-            </collectionProp>
-            <collectionProp name="-1974838674">
-              <stringProp name="1567">10</stringProp>
-              <stringProp name="53">5</stringProp>
-              <stringProp name="1629">30</stringProp>
-            </collectionProp>
-          </collectionProp>
-        </kg.apc.jmeter.timers.VariableThroughputTimer>
-        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request GET" enabled="true">
           <stringProp name="HTTPSampler.path">/booking</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
