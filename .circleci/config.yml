@@ -3,7 +3,7 @@ version: 2.1
 executors:
     base:
         docker:
-        - image: justb4/jmeter
+        - image: justb4/jmeter-plugins:latest
         working_directory: ~/app
             
 jobs:
@@ -11,22 +11,22 @@ jobs:
         executor: base
         steps:
             - checkout
-            - run:
-                name: Crear directorio para extensiones de JMeter
-                command: mkdir -p /opt/jmeter/lib/ext
-            - run:
-                name: Instalar JMeter Plugin Manager 
-                command: |
-                    wget https://jmeter-plugins.org/get/ -O /opt/jmeter/lib/ext/jmeter-plugins-manager.jar
-                    java -cp /opt/jmeter/lib/ext/jmeter-plugins-manager.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
-            - run:
-                name: Crear archivo PluginsManagerCMD.bat
-                command: |
-                    echo "REM Dummy file for Plugin Manager compatibility" > /opt/jmeter/bin/PluginsManagerCMD.bat        
-            - run:
-                 name: Instalar Plugins TST
-                 command: |
-                     java -cp /opt/jmeter/lib/ext/jmeter-plugins-manager.jar org.jmeterplugins.repository.PluginManagerCMD install jpgc-casutg
+            # - run:
+            #     name: Crear directorio para extensiones de JMeter
+            #     command: mkdir -p /opt/jmeter/lib/ext
+            # - run:
+            #     name: Instalar JMeter Plugin Manager 
+            #     command: |
+            #         wget https://jmeter-plugins.org/get/ -O /opt/jmeter/lib/ext/jmeter-plugins-manager.jar
+            #         java -cp /opt/jmeter/lib/ext/jmeter-plugins-manager.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
+            # - run:
+            #     name: Crear archivo PluginsManagerCMD.bat
+            #     command: |
+            #         echo "REM Dummy file for Plugin Manager compatibility" > /opt/jmeter/bin/PluginsManagerCMD.bat        
+            # - run:
+            #      name: Instalar Plugins TST
+            #      command: |
+            #          java -cp /opt/jmeter/lib/ext/jmeter-plugins-manager.jar org.jmeterplugins.repository.PluginManagerCMD install jpgc-casutg
             - run: 
                 name: Run JMeter
                 command: |
