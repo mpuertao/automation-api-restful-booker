@@ -1,2 +1,2 @@
 # automation-api-restful-booker
-Este proyecto utiliza KarateDSL para automatizar las pruebas de una API con integración a CIRCLECI
+Este proyecto utiliza JMeter para automatizar las pruebas performane de una API con integración a CIRCLECI
